@@ -223,11 +223,16 @@ export default function NewPage({ fid: paramFid }: NewPageProps) {
 
 				<div className="space-y-6">
 					{loading && (
-						<div className="bg-black/50 backdrop-blur-sm rounded-xl p-6 border border-gray-900">
+						<div className="bg-black/50 backdrop-blur-sm p-6 border border-gray-900">
 							<div className="flex flex-col items-center justify-center space-y-4">
 								<div
-									className="animate-spin rounded-full h-8 w-8 border-b-2"
-									style={{ borderColor: '#FF4F00' }}
+									className="animate-spin h-8 w-8"
+									style={{
+										borderBottom: '2px solid #FF4F00',
+										borderRight: '2px solid transparent',
+										borderTop: '2px solid transparent',
+										borderLeft: '2px solid transparent',
+									}}
 								></div>
 								<p className="text-lg font-medium">Calculating...</p>
 								<p className="text-sm text-gray-400">
@@ -246,7 +251,7 @@ export default function NewPage({ fid: paramFid }: NewPageProps) {
 					{!loading && !error && (
 						<div className="grid gap-6">
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-								<div className="p-6 bg-black rounded-lg border border-gray-900">
+								<div className="p-6 bg-black/20 backdrop-blur-sm border border-gray-900">
 									<p className="text-sm text-gray-400 mb-2">
 										Total Followers of Your Network
 									</p>
@@ -263,7 +268,7 @@ export default function NewPage({ fid: paramFid }: NewPageProps) {
 									</div>
 								</div>
 
-								<div className="p-6 bg-black rounded-lg border border-gray-900">
+								<div className="p-6 bg-black/20 backdrop-blur-sm border border-gray-900">
 									<p className="text-sm text-gray-400 mb-2">
 										Average Followers per Follower
 									</p>
